@@ -21,4 +21,15 @@ public class ProductServiceImpl implements ProductService{
 
         return productRepo.findAll().stream().map(p -> modelMapper.map(p, ProductDto.class)).collect(Collectors.toList());
     }
+@Override
+    public ProductDto getProductById(int id){
+        var pr = productRepo
+                .findAll()
+                .stream().filter(p -> p.getId() == id)
+                .findFirst()
+                .get();
+        return modelMapper.map(pr, ProductDto.class);
+
+
+}
 }
