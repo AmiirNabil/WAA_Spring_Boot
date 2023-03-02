@@ -1,6 +1,7 @@
 package com.mygroup.Application.controller;
 
 import com.mygroup.Application.domain.Product;
+import com.mygroup.Application.domain.Review;
 import com.mygroup.Application.domain.dto.ProductDto;
 import com.mygroup.Application.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,14 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ProductDto getProductById(@PathVariable("id") int id)
+    public Product getProductById(@PathVariable("id") int id)
     {
         return productService.getProductById(id);
     }
+@GetMapping("{id}/reviews")
+    public List<Review> getProductDetails(@PathVariable("id") int id){
+    return productService.getProductDetails(id);
 
+}
 
 }
