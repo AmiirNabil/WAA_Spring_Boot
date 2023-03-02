@@ -1,9 +1,9 @@
 package com.mygroup.Application.service;
 
-import com.mygroup.Application.domain.Product;
+import com.mygroup.Application.domain.dto.ProductDto;
 
 import java.util.List;
 
 public interface ProductService {
-    List<Product> findAll();
+     List<ProductDto> findAll();
 }
