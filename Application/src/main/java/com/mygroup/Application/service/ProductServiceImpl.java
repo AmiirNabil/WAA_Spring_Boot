@@ -38,12 +38,15 @@ public class ProductServiceImpl implements ProductService{
 
 @Override
 public List<Review> getProductDetails(int id){
-        return productRepo
-                .findAll()
-                .stream()
-                .filter(p -> p.getId() == id)
-                .findFirst()
-                .get()
+        return getProductById(id)
                 .getReviews();
+}
+
+public Review getReviewById(int id, int reviewId){
+        return getProductDetails(id)
+                .stream()
+                .filter(r -> r.getId() == reviewId)
+                .findFirst()
+                .get();
 }
 }

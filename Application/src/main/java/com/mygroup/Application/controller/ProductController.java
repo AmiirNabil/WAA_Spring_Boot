@@ -33,5 +33,10 @@ public class ProductController {
     return productService.getProductDetails(id);
 
 }
+@GetMapping("/{id}/reviews/{reviewid}")
+public Review getReviewById(@PathVariable("id") int id, @PathVariable("reviewid") int reviewId){
+
+    return productService.getReviewById(id,reviewId);
+}
 
 }

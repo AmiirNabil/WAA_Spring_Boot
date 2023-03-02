@@ -10,4 +10,5 @@ public interface ProductService {
      List<ProductDto> findAll();
      Product getProductById(int id);
      List<Review> getProductDetails(int id);
+     Review getReviewById(int id, int reviewId);
 }
