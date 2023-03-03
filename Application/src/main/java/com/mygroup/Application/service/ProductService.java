@@ -11,4 +11,6 @@ public interface ProductService {
      Product getProductById(int id);
      List<Review> getProductDetails(int id);
      Review getReviewById(int id, int reviewId);
+     void addProduct(Product p);
+     void deleteProduct(int id);
 }

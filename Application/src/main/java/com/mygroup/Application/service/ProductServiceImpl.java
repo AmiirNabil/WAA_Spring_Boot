@@ -49,4 +49,13 @@ public Review getReviewById(int id, int reviewId){
                 .findFirst()
                 .get();
 }
+
+    public void addProduct(Product p){
+        productRepo.addProduct(p);
+    }
+
+    @Override
+    public void deleteProduct(int id) {
+        productRepo.deleteProduct(id);
+    }
 }

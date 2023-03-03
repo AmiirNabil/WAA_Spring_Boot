@@ -11,6 +11,7 @@ import java.util.List;
 public class ProductRepoImpl implements ProductRepo{
 
     private static List<Product> products;
+    private static int productId = 113;
     static{
 products = new ArrayList<>();
 Review r1a = new Review(123, "I love it", 5);
@@ -28,11 +29,27 @@ List<Review> reviews1 = Arrays.asList(r1a,r1b);
         products.add(p1);
         products.add(p2);
 
-
-    }
+        }
 
     @Override
     public List<Product> findAll() {
         return products;
+    }
+
+
+    public void addProduct(Product p){
+    p.setId(productId);
+    productId++;
+    products.add(p);
+    }
+
+    public void deleteProduct(int id){
+        var deletepr =
+        products
+                .stream()
+                .filter(p -> p.getId() == id)
+                .findFirst()
+                .get();
+        products.remove(deletepr);
     }
 }
