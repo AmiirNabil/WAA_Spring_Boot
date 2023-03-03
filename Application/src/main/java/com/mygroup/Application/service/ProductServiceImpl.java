@@ -58,4 +58,7 @@ public Review getReviewById(int id, int reviewId){
     public void deleteProduct(int id) {
         productRepo.deleteProduct(id);
     }
+    public void updateProduct(int id, ProductDto p){
+        productRepo.updateProduct(id, p);
+    }
 }

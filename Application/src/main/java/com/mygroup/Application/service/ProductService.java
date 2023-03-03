@@ -13,4 +13,6 @@ public interface ProductService {
      Review getReviewById(int id, int reviewId);
      void addProduct(Product p);
      void deleteProduct(int id);
+     void updateProduct(int id, ProductDto p);
+
 }

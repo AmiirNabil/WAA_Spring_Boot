@@ -2,6 +2,7 @@ package com.mygroup.Application.repo;
 
 import com.mygroup.Application.domain.Product;
 import com.mygroup.Application.domain.Review;
+import com.mygroup.Application.domain.dto.ProductDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -51,5 +52,16 @@ List<Review> reviews1 = Arrays.asList(r1a,r1b);
                 .findFirst()
                 .get();
         products.remove(deletepr);
+    }
+    public void updateProduct(int id, ProductDto p){
+        var upproduct =
+        products
+        .stream()
+        .filter(pr -> pr.getId() == id)
+        .findFirst()
+        .get();
+
+        upproduct.setName(p.getName());
+        upproduct.setPrice(p.getPrice());
     }
 }

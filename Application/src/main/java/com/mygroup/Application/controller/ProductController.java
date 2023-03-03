@@ -44,4 +44,9 @@ public Review getReviewById(@PathVariable("id") int id, @PathVariable("reviewid"
     public void deleteProduct(@PathVariable int id){
     productService.deleteProduct(id);
 }
+@PutMapping("/{id}")
+    public void updateProduct(@PathVariable int id, @RequestBody ProductDto p){
+    productService.updateProduct(id, p);
+}
+
 }
